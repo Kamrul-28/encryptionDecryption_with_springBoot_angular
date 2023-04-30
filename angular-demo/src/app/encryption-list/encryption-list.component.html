@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-header p-3">
+      List of All Data
+  </div>
+  <div class="card-body">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Raw Data</th>
+        <th scope="col">Security Key</th>
+        <th scope="col">Encrypted Value</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let encryption of encryptions">
+        <th scope="row">{{ encryption.id }}</th>
+        <td> {{ encryption.rawData }} </td>
+        <td> {{ encryption.securityKey }} </td>
+        <td> {{ encryption.encryptedValue }} </td>
+        <td>
+          <!-- <button (click) = "updateEncryption(encryption.id)" class = "btn btn-success"><i class="fa fa-arrows"></i></button> -->
+          <button (click) = "updateEncryption(encryption.id)" class = "btn btn-warning" style="margin-left: 10px"><i class="fa fa-edit"></i></button>
+          <button (click) = "deleteEncryption(encryption.id)" class = "btn btn-danger" style="margin-left: 10px"><i class="fa fa-trash"></i></button>
+          <button (click) = "encryptionDetails(encryption.id)" class = "btn btn-dark" style="margin-left: 10px"><i class="fa fa-eye"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
