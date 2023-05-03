@@ -31,4 +31,8 @@ export class EncryptionService {
   deleteEncryption(id: number): Observable<Object>{
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
+
+  decryptEncryption(id: number, encryption: Encryption): Observable<Object>{
+    return this.httpClient.put(`${this.baseURL}/decrypt/${id}`, encryption);
+  }
 }
